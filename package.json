@@ -1,0 +1,45 @@
+{
+  "name": "copy-random",
+  "version": "1.0.0",
+  "description": "Copy random files",
+  "main": "index.js",
+  "author": "Andre Caetano",
+  "license": "MIT",
+  "bin": {
+    "cpyr": "cli.js"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "cpy": "^4.0.1",
+    "globby": "^6.0.0",
+    "lodash": "^4.13.1",
+    "meow": "^3.7.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "chai": "^3.5.0",
+    "del": "^2.2.2",
+    "mocha": "^2.3.3"
+  },
+  "keywords": [
+    "rpg",
+    "gaming",
+    "hard-data",
+    "creatures",
+    "monsters",
+    "data",
+    "words",
+    "word",
+    "list",
+    "random",
+    "rand",
+    "cli",
+    "cli-app"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webcaetano/copy-random"
+  }
+}
