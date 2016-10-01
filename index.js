@@ -10,7 +10,8 @@ var defaults = {
 }
 
 
-var self = function(src,dest,size=2,options,callback=null){
+var self = function(src,dest,size,options,callback=null){
+	if(size===undefined) size = 2;
 	options = _.extend({},defaults,options);
 
 
