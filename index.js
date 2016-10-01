@@ -14,7 +14,7 @@ var self = function(src,dest,size,options){
 	options = _.extend({},defaults,options);
 
 
-	return cpy(_.sampleSize(globby.sync(src),size), dest, options).catch(err => {
+	return cpy(_.sampleSize(globby.sync(src),size), dest, options).catch(function(err){
 		if (err.name === 'CpyError') {
 			console.error(err.message);
 			process.exit(1);
