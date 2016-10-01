@@ -9,8 +9,7 @@ var _ = require('lodash');
 var defaults = {
 }
 
-
-var self = function(src,dest,size,options,callback=null){
+var self = function(src,dest,size,options){
 	if(size===undefined) size = 2;
 	options = _.extend({},defaults,options);
 
@@ -22,9 +21,7 @@ var self = function(src,dest,size,options,callback=null){
 		} else {
 			throw err;
 		}
-	}).then(function(){
-		if(callback) callback();
-	})
+	});
 }
 
 
