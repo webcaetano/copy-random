@@ -15,7 +15,7 @@ npm install copy-random --save
 ## Usage
 
 ```javascript
-var cpy = require('copy-random');
+var cpyr = require('copy-random');
 
 cpyr('./test/*.png','./test/output',3).then(function(){
 })
@@ -41,10 +41,10 @@ Options
 
 Examples
   Copy 3 random .png files in src folder into dist except src/goat.png
-  $ cpy "src/*.png" "!src/goat.png" dist 3
+  $ cpyr "src/*.png" "!src/goat.png" dist 3
 
   Copy 3 random .html files inside src folder into dist and preserve path structure
-  $ cpy "**/*.html" "../dist/" 3 --cwd=src --parents
+  $ cpyr "**/*.html" "../dist/" 3 --cwd=src --parents
 ```
 
 
