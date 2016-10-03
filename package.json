@@ -19,7 +19,8 @@
   },
   "devDependencies": {
     "ava": "^0.16.0",
-    "del": "^2.2.2"
+    "del": "^2.2.2",
+    "tempfile": "^1.1.1"
   },
   "keywords": [
     "cli-app",

@@ -1,15 +1,28 @@
 var _ = require('lodash');
 var del = require('del');
 var globby = require('globby');
+var path = require('path');
+var fs = require('fs');
+var test = require('ava');
+var tempfile = require('tempfile');
+
 var self = require('./');
 
-var test = require('ava');
+test('should output 3 files', async function(t){
+	var tmpFolder = tempfile();
+	fs.mkdirSync(tmpFolder);
+	fs.mkdirSync(path.join(tmpFolder,'/src'));
+	fs.mkdirSync(path.join(tmpFolder,'/output'));
 
-test('should output 3 files', async t => {
-	var resp = await self('./test/*.png','./test/output',3).then(function(){
-		var output = globby.sync('./test/output/*.png');
-		t.is(output.length,3);
-		t.pass();
-		del.sync('./test/output/*');
-	})
+	_.times(30,function(i){
+		fs.writeFileSync(path.join(tmpFolder,'/src/'+_.padStart(i,2,'0')+'.png'),'lulu')
+	});
+
+	await self(path.join(tmpFolder,'/src/*.png'),path.join(tmpFolder,'/output'),3);
+	t.is(globby.sync(path.join(tmpFolder,'/output/*')).length,3);
+	t.pass();
+	del.sync('./test/output/*');
 });
+
+
+
